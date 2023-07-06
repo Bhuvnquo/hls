@@ -93,7 +93,9 @@ const get_middleware = function (params) {
             : url
 
           res.writeHead(200, { "Content-Type": "application/x-mpegURL" })
-          res.end(modify_m3u8_content(response.toString().trim(), m3u8_url, referer_url, redirected_base_url))
+          console.log("BEFORE", redirected_base_url)
+          console.log("AFTER", redirected_base_url.replace("http", "https"))
+          res.end(modify_m3u8_content(response.toString().trim(), m3u8_url, referer_url, redirected_base_url.replace("http", "https")))
         }
       })
       .catch((e) => {

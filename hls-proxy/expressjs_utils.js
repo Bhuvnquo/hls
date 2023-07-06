@@ -16,14 +16,12 @@ const get_proxy_req_url = function (req) {
 const get_base_req_url = function (req) {
   let base_url = ''
   const key = "0"
-  console.log(req.path,has_req_param(req, key))
 
   if (req.path && has_req_param(req, key)) {
     base_url = req.baseUrl || ''
     base_url += req.path.substring(0, (req.path.length - req.params[key].length - 1))
   }
 
-  console.log("gghfgfg",base_url,req.path)
   return base_url + "/stream"
 }
 

@@ -3,6 +3,7 @@
   "description": "Node.js server to proxy HLS video streams",
   "version": "3.4.0",
   "scripts": {
+    "dev": "node hls-proxy/bin/hlsd.js",
     "start": "pm2 start hls-proxy/bin/hlsd.js --name app -i 2",
     "sudo": "sudo node hls-proxy/bin/hlsd.js"
   },

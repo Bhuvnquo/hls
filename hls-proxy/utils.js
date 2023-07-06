@@ -22,7 +22,6 @@ const parse_req_url = function(params, req) {
   const result = {redirected_base_url: '', url_type: '', url: '', referer_url: ''}
 
   const matches = regexs.req_url.exec( expressjs.get_proxy_req_url(req) )
-  console.log(matches)
 
   if (matches) {
     result.redirected_base_url = `${ is_secure ? 'https' : 'http' }://${host || req.headers.host}${expressjs.get_base_req_url(req) || matches[1] || ''}`
